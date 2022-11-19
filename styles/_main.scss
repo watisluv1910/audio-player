@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.wrapper {
+    position: relative;
+
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #2F2F2F;
+}
+
+.player {
+    position: relative;
+    width: 310px;
+    height: 490px;
+
+    padding: 25px 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #F0F0F3;
+    border-radius: 20px;
+
+    .info__container {
+
+        width: 250px;
+        height: 280px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background: rgba(240, 240, 237, 0.95);
+        box-shadow: 8px 8px 30px 5px rgba(174, 174, 192, 0.5), -9px -9px 30px -8px #FFFFFF, inset 9px 9px 12px -9px #FFFFFF;
+        border-radius: 20px;
+
+        .info {
+            width: 250px;
+            height: 250px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            color: #000000;
+
+            .head {
+                width: inherit;
+                height: 16px;
+
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 18px;
+                text-align: center;
+            }
+
+            .title {
+                width: inherit;
+                height: 40px;
+
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+
+                &__name {
+                    width: inherit;
+                    height: 20px;
+
+                    font-family: 'Inter';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 24px;
+                    text-align: center;
+                }
+
+                &__artist {
+                    width: inherit;
+                    height: 17px;
+
+                    font-family: 'Inter';
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 14px;
+                    line-height: 17px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .progress__container {
+        width: 240px;
+        height: 40px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .progress__time {
+            width: inherit;
+            height: 20px;
+
+            display: flex;
+            justify-content: space-between;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 21px;
+            text-align: center;
+            letter-spacing: 0.005em;
+
+            .time {
+                width: 30px;
+                height: inherit;
+            }
+        }
+
+        .progress__bar {
+            position: relative;
+
+            width: 220px;
+            height: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .track {
+                width: inherit;
+                height: 0;
+
+                border-radius: 10px;
+                border: 3px solid #cacaca;
+                background: #cacaca;
+
+                box-shadow:
+                    -10px -10px 20px rgba(255, 255, 255, 0.76), 
+                    inset 10px 10px 10px rgba(174, 174, 192, 0.3);
+
+                &__progress {
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    width: 83px;
+                    height: 0;
+
+                    border-radius: 10px;
+                    border: 3px solid #1A1D3F;
+                    background: #1A1D3F;
+                }
+            }
+
+            .point {
+                position: absolute;
+                top: 0;
+                left: calc(83px - 10px);
+
+                width: 20px;
+                height: 20px;
+
+                border-radius: 50%;
+                background: #F0F0ED;
+                box-shadow:
+                    3px 3px 5px rgba(174, 174, 192, 0.33),
+                    -10px -10px 12px -6px rgba(255, 255, 255, 0.81),
+                    inset 9px 9px 12px -9px rgba(174, 174, 192, 0.51);
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    width: 10px;
+                    height: 10px;
+
+                    border-radius: inherit;
+                    background: #1A1D3F;
+                }
+            }
+        }
+    }
+
+    .controls__container {
+        width: 250px;
+        height: 80px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .btn {
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+            background: rgba(240, 240, 237, 0.95);
+            box-shadow: 
+                10px 10px 32px -5px rgba(174, 174, 192, 0.5), 
+                -10px -10px 26px -5px #FFFFFF;
+
+            &.play {
+                width: 80px;
+                height: 80px;
+
+                background: #1A1D3F;
+                box-shadow: 
+                    3px 3px 10px rgba(174, 174, 192, 0.8), 
+                    -10px -10px 12px -6px rgba(255, 255, 255, 0.8), 
+                    inset 9px 9px 12px -9px rgba(174, 174, 192, 0.25);
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+        }
+    }
+}

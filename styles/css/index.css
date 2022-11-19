@@ -1,0 +1,229 @@
+/* Box sizing rules */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2F2F2F;
+}
+
+.player {
+  position: relative;
+  width: 310px;
+  height: 490px;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #F0F0F3;
+  border-radius: 20px;
+}
+.player .info__container {
+  width: 250px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(240, 240, 237, 0.95);
+  box-shadow: 8px 8px 30px 5px rgba(174, 174, 192, 0.5), -9px -9px 30px -8px #FFFFFF, inset 9px 9px 12px -9px #FFFFFF;
+  border-radius: 20px;
+}
+.player .info__container .info {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #000000;
+}
+.player .info__container .info .head {
+  width: inherit;
+  height: 16px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+.player .info__container .info .title {
+  width: inherit;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.player .info__container .info .title__name {
+  width: inherit;
+  height: 20px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+.player .info__container .info .title__artist {
+  width: inherit;
+  height: 17px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+}
+.player .progress__container {
+  width: 240px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.player .progress__container .progress__time {
+  width: inherit;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: 0.005em;
+}
+.player .progress__container .progress__time .time {
+  width: 30px;
+  height: inherit;
+}
+.player .progress__container .progress__bar {
+  position: relative;
+  width: 220px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.player .progress__container .progress__bar .track {
+  width: inherit;
+  height: 0;
+  border-radius: 10px;
+  border: 3px solid #cacaca;
+  background: #cacaca;
+  box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.76), inset 10px 10px 10px rgba(174, 174, 192, 0.3);
+}
+.player .progress__container .progress__bar .track__progress {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 83px;
+  height: 0;
+  border-radius: 10px;
+  border: 3px solid #1A1D3F;
+  background: #1A1D3F;
+}
+.player .progress__container .progress__bar .point {
+  position: absolute;
+  top: 0;
+  left: 73px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #F0F0ED;
+  box-shadow: 3px 3px 5px rgba(174, 174, 192, 0.33), -10px -10px 12px -6px rgba(255, 255, 255, 0.81), inset 9px 9px 12px -9px rgba(174, 174, 192, 0.51);
+}
+.player .progress__container .progress__bar .point::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: inherit;
+  background: #1A1D3F;
+}
+.player .controls__container {
+  width: 250px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.player .controls__container .btn {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgba(240, 240, 237, 0.95);
+  box-shadow: 10px 10px 32px -5px rgba(174, 174, 192, 0.5), -10px -10px 26px -5px #FFFFFF;
+}
+.player .controls__container .btn.play {
+  width: 80px;
+  height: 80px;
+  background: #1A1D3F;
+  box-shadow: 3px 3px 10px rgba(174, 174, 192, 0.8), -10px -10px 12px -6px rgba(255, 255, 255, 0.8), inset 9px 9px 12px -9px rgba(174, 174, 192, 0.25);
+}
+.player .controls__container .btn.play img {
+  width: 60px;
+  height: 60px;
+}
