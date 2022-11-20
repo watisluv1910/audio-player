@@ -96,10 +96,14 @@ select {
   height: 16px;
   font-family: "Poppins";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 12px;
   line-height: 18px;
   text-align: center;
+}
+.player .info__container .info .cover__img.active {
+  -webkit-animation: rotate 3s linear infinite;
+          animation: rotate 3s linear infinite;
 }
 .player .info__container .info .title {
   width: inherit;
@@ -161,7 +165,7 @@ select {
   align-items: center;
 }
 .player .progress__container .progress__bar .track {
-  width: inherit;
+  width: 220px;
   height: 0;
   border-radius: 10px;
   border: 3px solid #cacaca;
@@ -173,7 +177,7 @@ select {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 83px;
+  width: 0;
   height: 0;
   border-radius: 10px;
   border: 3px solid #1A1D3F;
@@ -182,9 +186,10 @@ select {
 .player .progress__container .progress__bar .point {
   position: absolute;
   top: 0;
-  left: 73px;
+  left: -10px;
   width: 20px;
   height: 20px;
+  cursor: pointer;
   border-radius: 50%;
   background: #F0F0ED;
   box-shadow: 3px 3px 5px rgba(174, 174, 192, 0.33), -10px -10px 12px -6px rgba(255, 255, 255, 0.81), inset 9px 9px 12px -9px rgba(174, 174, 192, 0.51);
@@ -213,6 +218,7 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   border-radius: 50%;
   background: rgba(240, 240, 237, 0.95);
   box-shadow: 10px 10px 32px -5px rgba(174, 174, 192, 0.5), -10px -10px 26px -5px #FFFFFF;
@@ -226,4 +232,22 @@ select {
 .player .controls__container .btn.play img {
   width: 60px;
   height: 60px;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
